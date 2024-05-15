@@ -3,7 +3,7 @@
 require('dotenv').config();
 const {Server} = require('socket.io');
 const io = new Server();
-io.listen(3000);
+io.listen(process.env.RENDER_URL);
 const caps = io.of('/caps');
 // //all functions for pick, picked up, delivered, in-transits (socket.on)
 
