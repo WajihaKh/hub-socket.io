@@ -6,6 +6,14 @@
 
 **Overview**:
 
-    - The CAPS system, built in Node.js, is undergoing its first phase. The focus is on establishing an event pool and handler functions. Users, like vendors and drivers, can interact with the system to manage package pickup, transit, and delivery. Developers aim to maintain clean code and utilize industry standards for state management and event-driven architecture.
+The CAPS system, built in Node.js, is undergoing its first phase. The focus is on establishing an event pool and handler functions. Users, like vendors and drivers, can interact with the system to manage package pickup, transit, and delivery. Developers aim to maintain clean code and utilize industry standards for state management and event-driven architecture.
 
 ![uml](./UML-day1.png)
+
+**Version**: 2.0.0
+
+**Overview**:
+
+Phase 2 of CAPS involves migrating to Socket.io for improved networking, aiming to enhance communication efficiency between clients and servers. While maintaining core functionalities, the focus shifts to establishing a robust networking layer. User stories remain, with a technical emphasis on application refactoring. The overarching goal is to implement a network event-driven system using Socket.io. Lab objectives include setting up a Socket.io event server, configuring Vendor and Driver Client Modules, and managing event traffic within the 'caps' namespace for seamless package tracking and delivery management.
+
+![uml](./UML-day2.png)
