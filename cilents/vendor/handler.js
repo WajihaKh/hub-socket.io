@@ -16,7 +16,6 @@ const generateOrder = (socket, payload = null) => {
   console.log('Order is ready to be picked up');
   socket.emit('pickup', payload);
 
-
     
 };
 

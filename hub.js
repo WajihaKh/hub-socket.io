@@ -10,18 +10,36 @@ const caps = io.of('/caps');
 function handlePickup(payload, socket) {
   console.log('The pickup was requested', payload.orderId);
   // socket.emit('received', {message:'Pickup acknowledged'});
+  caps.emit('pickup', payload);
+}
+
+
+function handleInTransit(payload, socket) {
+  console.log(`Order ${payload.orderId} is in-transit`);
+  caps.emit('in-transit', payload);
+}
+
+function handleDelivered(payload, socket) {
+  console.log(`Order ${payload.orderId} has been delivered`);
+  caps.emit('delivered', payload);
 }
 
 
 function handleConnection(socket) {
-  socket.on('pickup', (payload) => {
-    handlePickup(payload, socket);
-  });
+  // socket.on('pickup', (payload) => {
+  //   handlePickup(payload, socket);
+  // });
+  socket.on('pickup', handlePickup);
+
+  socket.on('in-transit', handleInTransit);
+
+  socket.on('delivered', handleDelivered);
 }
+
 
 function startServer() {
   console.log('The server has been started');
   caps.on('connection', handleConnection);
 }
 
-module.exports = {handleConnection, startServer};
+module.exports = { startServer};
