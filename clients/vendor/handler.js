@@ -8,6 +8,7 @@ const generateOrder = (socket, payload = null) => {
   if (!payload) {
     payload = {
       store: '1-800-flowers',
+      status: 'ready',
       orderId: chance.guid(),
       customer: chance.name(),
       address: `${chance.city()}, ${chance.state()}`,
